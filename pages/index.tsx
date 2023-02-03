@@ -18,7 +18,6 @@ const Home: NextPage<Props> = ({ stores }) => {
 
   useEffect(() => {
     initializeStores(stores);
-    console.log('stores', stores);
   }, [initializeStores, stores]);
 
   return (
