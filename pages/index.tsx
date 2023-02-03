@@ -9,12 +9,16 @@ import MapSection from '../components/home/MapSection';
 import { Store } from '../types/store';
 import useStores from '../hooks/useStores';
 
-const Home = ({ stores: Store[] }) => {
-  console.log(stores);
+interface Props {
+  stores: Store[];
+}
+
+const Home: NextPage<Props> = ({ stores }) => {
   const { initializeStores } = useStores();
 
   useEffect(() => {
     initializeStores(stores);
+    console.log('stores', stores);
   }, [initializeStores, stores]);
 
   return (
