@@ -5,13 +5,14 @@ import styles from '../../styles/header.module.scss';
 
 interface Props {
   rightElements?: React.ReactElement[];
+  onClickLogo?: () => void;
 }
 
-const HeaderComponent = ({ rightElements }: Props) => {
+const HeaderComponent = ({ rightElements, onClickLogo }: Props) => {
   return (
     <header className={styles.header}>
       <div className={styles.flexItem}>
-        <Link href="/" className={styles.box}>
+        <Link href="/" className={styles.box} onClick={onClickLogo}>
           <Image
             src="/inflearn.png"
             width={110}

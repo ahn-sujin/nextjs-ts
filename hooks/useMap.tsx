@@ -15,7 +15,7 @@ const useMap = () => {
     mutate(MAP_KEY, map);
   }, []);
 
-  // INITIAL_CENTER와 INITIAL_ZOOM으로 맵의 좌표와 줌 레벨을 변경한다.
+  // INITIAL_CENTER와 INITIAL_ZOOM으로 맵의 좌표와 줌 레벨을 변경한다. (초기 상태로 변경)
   const resetMapOptions = useCallback(() => {
     /** https://navermaps.github.io/maps.js.ncp/docs/naver.maps.Map.html#morph__anchor */
     map.morph(new naver.maps.LatLng(...INITIAL_CENTER), INITIAL_ZOOM);
