@@ -9,7 +9,6 @@ import DetailContent from './DetailContent';
 const DetailSection = () => {
   const { data: currentStore } = useSWR<Store>(CURRENT_STORE_KEY);
   const [expanded, setExpanded] = useState(false);
-  console.log(currentStore);
 
   return (
     <div
