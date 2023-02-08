@@ -16,7 +16,7 @@ const HeaderComponent = ({ rightElements, onClickLogo }: Props) => {
           href="/"
           className={styles.box}
           onClick={onClickLogo}
-          arial-label="홈으로 이동"
+          aria-label="홈으로 이동"
         >
           <Image
             src="/inflearn.png"
