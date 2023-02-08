@@ -5,13 +5,12 @@ import MapSection from '../components/home/MapSection';
 import DetailSection from '../components/home/DetailSection';
 import { Store } from '../types/store';
 import useStores from '../hooks/useStores';
-
+import { NextSeo } from 'next-seo';
 interface Props {
   stores: Store[];
 }
 
 const Home: NextPage<Props> = ({ stores }) => {
-  // console.log(stores);
   const { initializeStores } = useStores();
 
   useEffect(() => {
@@ -20,6 +19,10 @@ const Home: NextPage<Props> = ({ stores }) => {
 
   return (
     <Fragment>
+      <NextSeo
+        title="매장 지도"
+        description="Next.js 시작하기 강의를 위한 매장 지도 서비스 입니다."
+      />
       <Header />
       <main style={{ width: '100%', height: '100%' }}>
         <MapSection />
