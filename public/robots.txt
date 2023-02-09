@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://sujin-map.vercel.app
+
+# Sitemaps
+Sitemap: https://sujin-map.vercel.app/sitemap.xml
