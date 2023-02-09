@@ -21,7 +21,8 @@ const Home: NextPage<Props> = ({ stores }) => {
     <Fragment>
       <NextSeo
         title="매장 지도"
-        description="Next.js 시작하기 강의를 위한 매장 지도 서비스 입니다."
+        description="매장 지도 서비스 어플리케이션 입니다."
+        canonical="https://sujin-map.vercel.app"
       />
       <Header />
       <main style={{ width: '100%', height: '100%' }}>
