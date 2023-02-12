@@ -1,4 +1,4 @@
-import { Fragment, useEffect } from 'react';
+import { Fragment, use, useEffect } from 'react';
 import { NextPage } from 'next';
 import Header from '../components/home/Header';
 import MapSection from '../components/home/MapSection';
@@ -36,8 +36,9 @@ const Home: NextPage<Props> = ({ stores }) => {
 export default Home;
 
 export async function getStaticProps() {
-  /** TODO: next api routes로 불러오기 ---> 리팩토링 */
-  const stores = (await import('../public/stores.json')).default;
+  const stores = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/stores`
+  ).then((res) => res.json());
 
   return {
     props: { stores },
