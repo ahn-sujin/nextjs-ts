@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: false,
   images: {
-    domains: ['lecture-1.vercel.app', 'search.pstatic.net'],
+    domains: ['sujin-map.vercel.app', 'search.pstatic.net'],
   },
   i18n: {
     /** https://nextjs.org/docs/advanced-features/i18n-routing#getting-started */
