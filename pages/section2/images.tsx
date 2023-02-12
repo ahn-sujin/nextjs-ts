@@ -16,7 +16,7 @@ const Images: NextPage = () => {
 
       <figure>
         <img
-          src="https://sujin-map.vercel.app/example.jpg"
+          src="https://lecture-1.vercel.app/example.jpg"
           alt="example"
           width={500}
           height={100}
@@ -44,7 +44,7 @@ const Images: NextPage = () => {
 
       <figure>
         <Image
-          src="https://sujin-map.vercel.app/example.jpg"
+          src="https://lecture-1.vercel.app/example.jpg"
           alt="v13 image"
           width={500}
           height={100}
@@ -62,7 +62,7 @@ const Images: NextPage = () => {
 
       <figure style={{ position: 'relative', width: '500px', height: '100px' }}>
         <Image
-          src="https://sujin-map.vercel.app/example.jpg"
+          src="https://lecture-1.vercel.app/example.jpg"
           alt="v13 fill"
           fill
           style={{ objectFit: 'cover' }}
