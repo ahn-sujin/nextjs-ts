@@ -4,7 +4,7 @@ import type { Store } from '../types/store';
 import DetailHeader from '../components/home/DetailHeader';
 import DetailContent from '../components/home/DetailContent';
 import { useRouter } from 'next/router';
-import useCurrentStore from '@/hooks/useCurrentStore';
+import useCurrentStore from '../hooks/useCurrentStore';
 import { NextSeo } from 'next-seo';
 
 interface Props {
