@@ -36,10 +36,9 @@ const Home: NextPage<Props> = ({ stores }) => {
 export default Home;
 
 export async function getStaticProps() {
-  const stores = (await import('../public/stores.json')).default;
-  // const stores = await fetch(
-  //   `${process.env.NEXT_PUBLIC_API_URL}/api/stores`
-  // ).then((res) => res.json());
+  const stores = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/stores`
+  ).then((res) => res.json());
 
   return {
     props: { stores },
