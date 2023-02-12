@@ -30,6 +30,9 @@ const StoreDetail: NextPage<Props> = ({ store }) => {
         title="매장 지도"
         description="매장 지도 서비스 어플리케이션 상세 페이지 입니다."
         canonical={`https://sujin-map.vercel.app/${store.name}`}
+        openGraph={{
+          url: `https://sujin-map.vercel.app/${store.name}`,
+        }}
       />
       <div
         className={`${styles.detailSection} ${styles.expanded} ${styles.selected} `}

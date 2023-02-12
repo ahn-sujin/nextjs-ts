@@ -23,6 +23,9 @@ const Home: NextPage<Props> = ({ stores }) => {
         title="매장 지도"
         description="매장 지도 서비스 어플리케이션 입니다."
         canonical="https://sujin-map.vercel.app"
+        openGraph={{
+          url: 'https://sujin-map.vercel.app',
+        }}
       />
       <Header />
       <main style={{ width: '100%', height: '100%' }}>
