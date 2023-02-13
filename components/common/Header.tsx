@@ -14,15 +14,15 @@ const HeaderComponent = ({ rightElements, onClickLogo }: Props) => {
       <div className={styles.flexItem}>
         <Link
           href="/"
-          className={styles.box}
+          // className={styles.box}
           onClick={onClickLogo}
           aria-label="홈으로 이동"
         >
           <Image
-            src="/inflearn.png"
-            width={110}
-            height={20}
-            alt="인프런 로고"
+            src="/images/logo2.png"
+            width={95}
+            height={40}
+            alt="맛나요 로고"
           />
         </Link>
       </div>
