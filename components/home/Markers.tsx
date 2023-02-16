@@ -46,8 +46,8 @@ const Markers = () => {
 };
 export default Markers;
 
-const MARKER_HEIGHT = 64;
-const MARKER_WIDTH = 54;
+const MARKER_HEIGHT = 52;
+const MARKER_WIDTH = 44;
 const NUMBER_OF_MARKER = 13;
 const SCALE = 2 / 3;
 
