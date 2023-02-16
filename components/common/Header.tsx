@@ -11,7 +11,7 @@ interface Props {
 const HeaderComponent = ({ rightElements, onClickLogo }: Props) => {
   return (
     <header className={styles.header}>
-      <div className={styles.flexItem}>
+      <div className={styles.logo}>
         <Link
           href="/"
           // className={styles.box}
@@ -19,9 +19,9 @@ const HeaderComponent = ({ rightElements, onClickLogo }: Props) => {
           aria-label="홈으로 이동"
         >
           <Image
-            src="/images/logo2.png"
-            width={95}
-            height={40}
+            src="/images/logo4.png"
+            width={90}
+            height={25}
             alt="맛나요 로고"
           />
         </Link>
