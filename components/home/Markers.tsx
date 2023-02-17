@@ -28,6 +28,7 @@ const Markers = () => {
             onClick={() => {
               setCurrentStore(store);
             }}
+            name={store.name}
             key={store.nid}
           />
         );
@@ -37,7 +38,7 @@ const Markers = () => {
           map={map}
           coordinates={currentStore.coordinates}
           icon={generateStoreMarkerIcon(currentStore.season, true)}
-          onClick={clearCurrentStore}
+          name={currentStore.name}
           key={currentStore.nid}
         />
       )}
@@ -46,8 +47,8 @@ const Markers = () => {
 };
 export default Markers;
 
-const MARKER_HEIGHT = 64;
-const MARKER_WIDTH = 54;
+const MARKER_HEIGHT = 44;
+const MARKER_WIDTH = 35;
 const NUMBER_OF_MARKER = 13;
 const SCALE = 2 / 3;
 
@@ -60,7 +61,9 @@ export function generateStoreMarkerIcon(
 ): ImageIcon {
   /** https://navermaps.github.io/maps.js.ncp/docs/tutorial-8-marker-retina-sprite.example.html */
   return {
-    url: isSelected ? 'images/markers-selected.png' : 'images/markers.png',
+    url: isSelected
+      ? 'images/new_selected_markers.png'
+      : 'images/new_markers.png',
     size: new naver.maps.Size(SCALED_MARKER_WIDTH, SCALED_MARKER_HEIGHT),
     origin: new naver.maps.Point(SCALED_MARKER_WIDTH * markerIndex, 0),
     scaledSize: new naver.maps.Size(

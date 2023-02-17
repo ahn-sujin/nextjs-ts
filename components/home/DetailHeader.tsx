@@ -27,13 +27,13 @@ const DetailHeader = ({ currentStore, expanded, onClickArrow }: Props) => {
         <div className={styles.flexRow}>
           <p className={styles.title}>{currentStore.name}</p>
           <button
-            className={headerStyles.box}
+            className={headerStyles.share}
             onClick={() => {
               copy(location.origin + '/' + currentStore.name);
             }}
             aria-label="매장 정보 주소 클립보드 복사"
           >
-            <AiOutlineShareAlt size={20} />
+            <AiOutlineShareAlt size={18} color="white" />
           </button>
         </div>
       )}

@@ -6,10 +6,12 @@
 
 html,
 body {
-  padding: 0;
-  margin: 0;
   width: 100%;
   height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 16px;
 }
 
 @layer base {
@@ -142,4 +144,9 @@ ul {
 button {
   cursor: pointer;
   font-family: inherit;
+}
+
+.inner {
+  width: 480px;
+  margin: 0 uato;
 }

@@ -11,18 +11,18 @@ interface Props {
 const HeaderComponent = ({ rightElements, onClickLogo }: Props) => {
   return (
     <header className={styles.header}>
-      <div className={styles.flexItem}>
+      <div className={styles.logo}>
         <Link
           href="/"
-          className={styles.box}
+          // className={styles.box}
           onClick={onClickLogo}
           aria-label="홈으로 이동"
         >
           <Image
-            src="/inflearn.png"
-            width={110}
-            height={20}
-            alt="인프런 로고"
+            src="/images/logo4.png"
+            width={90}
+            height={25}
+            alt="맛나요 로고"
           />
         </Link>
       </div>

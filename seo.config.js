@@ -1,9 +1,9 @@
 /* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
 export default {
-  titleTemplate: '%s - 지도 서비스 어플리케이션',
+  titleTemplate: '%s - 맛집 지도 서비스',
   openGraph: {
     type: 'website',
-    site_name: '지도 서비스 어플리케이션',
+    site_name: '맛집 지도 서비스',
     images: [
       { url: 'https://nextjs.org/static/blog/next-13/twitter-card.png' },
     ],

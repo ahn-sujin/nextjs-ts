@@ -31,16 +31,16 @@ const HomeHeader = () => {
           key="button"
           aria-label="현재 위치 클립보드 복사"
         >
-          <AiOutlineShareAlt size={20} />
+          <AiOutlineShareAlt size={20} color="white" />
         </button>,
-        <Link
-          href="/feedback"
-          className={styles.box}
-          key="link"
-          aria-label="피드백 페이지 이동"
-        >
-          <VscFeedback size={20} />
-        </Link>,
+        // <Link
+        //   href="/feedback"
+        //   className={styles.box}
+        //   key="link"
+        //   aria-label="피드백 페이지 이동"
+        // >
+        //   <VscFeedback size={20} />
+        // </Link>
       ]}
     />
   );
