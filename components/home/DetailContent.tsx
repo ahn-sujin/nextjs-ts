@@ -38,7 +38,7 @@ const DetailContent = ({ currentStore, expanded }: Props) => {
       {expanded && (
         <>
           <div className={styles.description}>
-            <p>{currentStore.description}</p>
+            <p>👉🏻&nbsp;{currentStore.description}</p>
           </div>
           <div className={styles.line} />
           <div className={styles.basicInfo}>
