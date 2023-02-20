@@ -22,18 +22,24 @@ const DetailHeader = ({ currentStore, expanded, onClickArrow }: Props) => {
       >
         <IoIosArrowUp size={20} color="#666666" />
       </button>
-      {!currentStore && <p className={styles.title}>매장을 선택해주세요</p>}
+      {!currentStore && (
+        <p className={styles.title}>
+          📍맛집을 <span>선택</span>해주세요!
+        </p>
+      )}
       {currentStore && (
         <div className={styles.flexRow}>
-          <p className={styles.title}>{currentStore.name}</p>
+          <p className={styles.name}>
+            {currentStore.name}
+            <span className={styles.subTitle}>{currentStore.foodKind}</span>
+          </p>
           <button
-            className={headerStyles.share}
             onClick={() => {
               copy(location.origin + '/' + currentStore.name);
             }}
             aria-label="매장 정보 주소 클립보드 복사"
           >
-            <AiOutlineShareAlt size={18} color="white" />
+            <AiOutlineShareAlt size={24} color="#F88A25" />
           </button>
         </div>
       )}

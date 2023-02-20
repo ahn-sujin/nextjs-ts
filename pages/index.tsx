@@ -22,7 +22,7 @@ const Home: NextPage<Props> = ({ stores }) => {
   return (
     <Fragment>
       <NextSeo
-        title="오늘 맛집"
+        title="맛집일기"
         description="지도 서비스 메인 페이지"
         canonical="https://sujin-map.vercel.app"
         openGraph={{

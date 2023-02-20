@@ -11,6 +11,8 @@ type Props = {
 
 const DetailContent = ({ currentStore, expanded }: Props) => {
   if (!currentStore) return null;
+  const menuLengths = currentStore.menus.length;
+
   return (
     <div
       className={`${styles.detailContent} ${expanded ? styles.expanded : ''}`}
@@ -36,21 +38,19 @@ const DetailContent = ({ currentStore, expanded }: Props) => {
       {expanded && (
         <>
           <div className={styles.description}>
-            <h2>설명</h2>
             <p>{currentStore.description}</p>
           </div>
-          <hr />
+          <div className={styles.line} />
           <div className={styles.basicInfo}>
-            <h2>기본 정보</h2>
-            <div className="address">
-              <IoLocationOutline size={20} />
+            <div className={styles.address}>
+              <IoLocationOutline size={20} color="#9e9e9e" />
               <span>{currentStore.address || '정보가 없습니다.'}</span>
             </div>
-            <div className="phone">
-              <IoCallOutline size={20} />
+            <div className={styles.phone}>
+              <IoCallOutline size={18} color="#9e9e9e" />
               <span>{currentStore.phone || '정보가 없습니다.'}</span>
             </div>
-            <div className="naverUrl">
+            <div className={styles.naverUrl}>
               <Image src={Naver} width={20} height={20} alt="" />
               <a
                 href={`https://pcmap.place.naver.com/restaurant/${currentStore.nid}/home`}
@@ -61,10 +61,13 @@ const DetailContent = ({ currentStore, expanded }: Props) => {
               </a>
             </div>
           </div>
-          <hr />
+          <div className={styles.line} />
           <div className={styles.menus}>
-            <h2>메뉴</h2>
-            <ul>
+            <div className={styles.menusTitle}>
+              <h2>메뉴</h2>
+              <span>{menuLengths}</span>
+            </div>
+            <ul className={styles.menuList}>
               {currentStore.menus?.map((menu) => (
                 <li className={styles.menu} key={menu.name}>
                   <span className={styles.name}>{menu.name}</span>
@@ -73,6 +76,7 @@ const DetailContent = ({ currentStore, expanded }: Props) => {
               ))}
             </ul>
           </div>
+          <div className={styles.footer}>©SUJIN</div>
         </>
       )}
     </div>
