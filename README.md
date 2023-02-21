@@ -25,33 +25,34 @@
 ### `Next.js`
 <img width="100" alt="nextJs" src="https://user-images.githubusercontent.com/67556491/220366826-2a2fb563-bc9b-4c58-895c-0a958887ed13.png" />
 
-- `React.js`의 단점 보완 및 다양한 최적화 지원으로 개발자 경험에 도움이 되어 사용하게 되었습니다.
-- `React.js` 의 CSR로 인한 SEO에 취약한 부분을  `Next.js`의 pre-rendering을 통해 SSR, SSG를 가능하게 하여 SEO 최적화를 보완할 수 있었습니다.
-- 이외에도 페이지 기반의 라우팅, client-side navigation, code splitting, image optimization, built-in-CSS를 통해 프로젝트 성능을 전체적으로 향상시킬 수 있었습니다.
+- `React.js`의 단점 보완 및 다양한 최적화 지원으로 개발자 경험에 도움이 되어 사용
+- `React.js` 의 CSR로 인한 SEO에 취약한 부분을  **`Next.js`의 pre-rendering을 통해 SSR, SSG를 가능하게 하여 SEO 최적화**를 보완
+- 이외에도 **Dynamic Routing, client-side navigation, code splitting, image optimization**를 통해 프로젝트 성능을 전체적으로 향상
 
 ### `TypeScript`
 <img width="100" alt="TypeScript" src="https://user-images.githubusercontent.com/67556491/220367785-05231ed8-7d19-4ee2-87ae-75ff66a3c71e.png" />
 
-- 코드 작성시 데이터의 type을 미리 지정하여 프로그램 실행 전에 미리 에러를 잡을 수 있었습니다.
-- 변수의 이름뿐만 아니라 그 데이터의 type까지 알 수 있기 때문에 코드 작성이 좀 더 쉽고 직관적이게 만들었습니다.
-- 컴파일 과정에서 ES6+문법들을 ES5로 바꿔주기 때문에 Babel의 도움 없이도 크로스브라우징의 문제를 해결할 수 있습니다.
+- 코드 작성시 데이터의 type을 미리 지정하여 **프로그램 실행 전에 미리 에러 방지**
+- 변수의 이름뿐만 아니라 그 데이터의 type까지 알 수 있기 때문에 **코드 가독성이 좋아짐**
+- 컴파일 과정에서 ES6+문법들을 ES5로 바꿔주기 때문에 Babel의 도움 없이도 **크로스브라우징 문제 해결**
 
 ### `SWR`
 <img width="100" alt="SWR" src="https://user-images.githubusercontent.com/67556491/220367999-d93f48df-1bd9-44cf-bd7c-cb4a561f6b11.png" />
 
-- `Next.js` 를 개발한 팀이 만든 상태 관리 라이브러리로, react query에 비행 진입 장벽이 낮고 fetch  속도가 빠르며 코드가 경량화 되어 있어 간단한 프로젝트를 만들 때 사용하기 좋습니다.
-- 이 프로젝트에서는 최소한의 전역 상태 저장 용도로 사용했습니다.
+- `Next.js` 를 개발한 팀이 만든 상태 관리 라이브러리로, `react query`에 비행 진입 장벽이 낮고 **fetch속도가 빠르며 코드가 경량화** 되어 있어 간단한 프로젝트를 만들 때 사용하기 좋음
+- 이 프로젝트에서는 최소한의 전역 상태 저장 용도로 사용
 
 ### `SCSS`
 <img width="100" alt="SCSS" src="https://user-images.githubusercontent.com/67556491/220368281-bcb83a8a-3cd0-4692-9ca8-37104f7f22d1.png" />
 
-- `css`의 불편한 점(불필요한 선택자, 연산 기능 한계, 구문의 부재 등)의 해결하고, 코드의 가독성과 재사용성을 높어주고자 `scss`를 사용했습니다.
+- `css`의 불편한 점(불필요한 선택자, 연산 기능 한계, 구문의 부재 등) 해결 및 코드의 가독성과 재사용성을 위해 사용
 
 <br />
 
 ## 구현 기능
 
-> `Next.js`와 함께 **네이버 지도 API**를 사용하여 **저장된 맛집을 지도위에 표시하고 마커 선택 시 해당 맛집에 대한 상세 정보를 제공**합니다. 또한 지도 **URL 공유 기능**을 통해 다른 사람과 맛집 정보를 공유할 수 있습니다.
+> `Next.js`와 함께 **네이버 지도 API**를 사용하여 **저장된 맛집을 지도위에 표시하고 마커 선택 시 해당 맛집에 대한 상세 정보를 제공**
+<br /> 또한 지도 **URL 공유 기능**을 통해 다른 사람과 맛집 정보를 공유할 수 있습니다.
 
 ### 📍 지도 위에 맛집 나타내기
 
