@@ -10,6 +10,8 @@
   ![SWR](https://img.shields.io/badge/-swr-000?style=flat-square&logo=next.js&link=http://zi-gae.github.io/)
   ![SASS](https://img.shields.io/badge/Sass-CC6699?style=flat-square&logo=sass&logoColor=white)
   
+ [📍맛집일기 보러가기](https://sujin-map.vercel.app/)
+  
 </div>
 
 <br />
