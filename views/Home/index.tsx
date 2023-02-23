@@ -19,7 +19,7 @@ export default HomeView;
 
 const Styled = styled.div`
   max-width: 430px;
-  height: 100%;
+  height: 100vh;
   margin: 0 auto;
 
   .main {

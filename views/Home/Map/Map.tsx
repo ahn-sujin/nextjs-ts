@@ -3,7 +3,7 @@ import Script from 'next/script';
 import { Coordinates } from 'types/store';
 import { NaverMap } from 'types/map';
 import { INITIAL_CENTER, INITIAL_ZOOM } from 'hooks/useMap';
-import styles from 'styles/map.module.scss';
+import styled from 'styled-components';
 
 type Props = {
   mapId?: string;
@@ -55,9 +55,25 @@ const Map = ({
         src={`https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.NEXT_PUBLIC_NCP_CLIENT_ID}`}
         onReady={initializeMap}
       />
-      <div id={mapId} className={styles.map} />
+      <Styled>
+        <div id={mapId} className="map" />
+      </Styled>
     </>
   );
 };
 
 export default Map;
+
+const Styled = styled.div`
+  height: 100%;
+
+  > .map {
+    width: 100%;
+    height: 100%;
+
+    // naver logo control 위치 조정
+    & > div:nth-of-type(2) {
+      bottom: 68px !important;
+    }
+  }
+`;

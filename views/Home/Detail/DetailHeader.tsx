@@ -28,7 +28,7 @@ const DetailHeader = ({ currentStore, expanded, onClickArrow }: Props) => {
           </p>
         )}
         {currentStore && (
-          <div className="flew_row">
+          <div className="flex_row">
             <p className="name">
               {currentStore.name}
               <span className="sub_title">{currentStore.foodKind}</span>
@@ -54,7 +54,7 @@ const Styled = styled.div`
   > .header {
     display: flex;
     flex-direction: column;
-    height: $header-height;
+    height: 60px;
     margin-bottom: 8px;
     padding: 0 20px;
 
@@ -91,6 +91,7 @@ const Styled = styled.div`
       font-size: 1rem;
       font-weight: 700;
       margin: 4px auto;
+
       > span {
         color: #f88a25;
       }
@@ -101,7 +102,7 @@ const Styled = styled.div`
       justify-content: space-between;
       align-items: center;
 
-      .name {
+      > .name {
         margin: 4px 0;
         font-size: 1.25rem;
         font-weight: 700;
