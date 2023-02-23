@@ -33,14 +33,6 @@ const HomeHeader = () => {
         >
           <AiOutlineShareAlt size={20} color="white" />
         </button>,
-        // <Link
-        //   href="/feedback"
-        //   className={styles.box}
-        //   key="link"
-        //   aria-label="피드백 페이지 이동"
-        // >
-        //   <VscFeedback size={20} />
-        // </Link>
       ]}
     />
   );

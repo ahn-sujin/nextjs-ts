@@ -1,5 +1,4 @@
 import styles from 'styles/detail.module.scss';
-import headerStyles from 'styles/header.module.scss';
 import { IoIosArrowUp } from 'react-icons/io';
 import { AiOutlineShareAlt } from 'react-icons/ai';
 import type { Store } from 'types/store';
@@ -35,7 +34,7 @@ const DetailHeader = ({ currentStore, expanded, onClickArrow }: Props) => {
           </p>
           <button
             onClick={() => {
-              copy(location.origin + '/' + currentStore.name);
+              copy(location.origin + '/detail/' + currentStore.name);
             }}
             aria-label="매장 정보 주소 클립보드 복사"
           >

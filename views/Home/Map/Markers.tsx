@@ -5,7 +5,7 @@ import { STORE_KEY } from 'hooks/useStores';
 import useCurrentStore, { CURRENT_STORE_KEY } from 'hooks/useCurrentStore';
 import type { ImageIcon, NaverMap } from 'types/map';
 import type { Store } from 'types/store';
-import Marker from 'components/home/Marker';
+import Marker from 'view/Home/Map/Marker';
 
 const Markers = () => {
   const { data: map } = useSWR<NaverMap>(MAP_KEY);

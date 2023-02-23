@@ -3,10 +3,10 @@ import useSWR from 'swr';
 import { CURRENT_STORE_KEY } from 'hooks/useCurrentStore';
 import type { Store } from 'types/store';
 import styles from 'styles/detail.module.scss';
-import DetailHeader from 'components/home/DetailHeader';
-import DetailContent from 'components/home/DetailContent';
+import DetailHeader from 'view/Home/Detail/DetailHeader';
+import DetailContent from 'view/Home/Detail/DetailContent';
 
-const DetailSection = () => {
+const HomeDetail = () => {
   const { data: currentStore } = useSWR<Store>(CURRENT_STORE_KEY);
   const [expanded, setExpanded] = useState(false);
 
@@ -25,4 +25,4 @@ const DetailSection = () => {
     </div>
   );
 };
-export default DetailSection;
+export default HomeDetail;

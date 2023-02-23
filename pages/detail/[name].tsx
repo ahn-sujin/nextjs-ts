@@ -1,11 +1,11 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import styles from 'styles/detail.module.scss';
-import type { Store } from 'types/store';
-import DetailHeader from 'components/home/DetailHeader';
-import DetailContent from 'components/home/DetailContent';
 import { useRouter } from 'next/router';
-import useCurrentStore from 'hooks/useCurrentStore';
 import { NextSeo } from 'next-seo';
+import useCurrentStore from 'hooks/useCurrentStore';
+import type { Store } from 'types/store';
+import DetailHeader from 'views/Home/Detail/DetailHeader';
+import DetailContent from 'views/Home/Detail/DetailContent';
+import styles from 'styles/detail.module.scss';
 
 interface Props {
   store: Store;
@@ -29,9 +29,9 @@ const StoreDetail: NextPage<Props> = ({ store }) => {
       <NextSeo
         title="맛집일기"
         description="지도 서비스 상세 페이지"
-        canonical={`https://sujin-map.vercel.app/${store.name}`}
+        canonical={`https://sujin-map.vercel.app/detail/${store.name}`}
         openGraph={{
-          url: `https://sujin-map.vercel.app/${store.name}`,
+          url: `https://sujin-map.vercel.app/detail/${store.name}`,
         }}
       />
       <div

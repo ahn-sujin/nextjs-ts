@@ -1,13 +1,9 @@
-import { Fragment, use, useEffect } from 'react';
+import { useEffect } from 'react';
 import { NextPage } from 'next';
-import Header from 'components/home/Header';
-import MapSection from 'components/home/MapSection';
-import DetailSection from 'components/home/DetailSection';
+import { NextSeo } from 'next-seo';
 import { Store } from 'types/store';
 import useStores from 'hooks/useStores';
-import { NextSeo } from 'next-seo';
-import style from 'styles/home.module.scss';
-
+import HomeView from 'views/Home';
 interface Props {
   stores: Store[];
 }
@@ -20,7 +16,7 @@ const Home: NextPage<Props> = ({ stores }) => {
   }, [initializeStores, stores]);
 
   return (
-    <Fragment>
+    <>
       <NextSeo
         title="맛집일기"
         description="지도 서비스 메인 페이지"
@@ -29,12 +25,8 @@ const Home: NextPage<Props> = ({ stores }) => {
           url: 'https://sujin-map.vercel.app',
         }}
       />
-      <Header />
-      <main className={style.main}>
-        <MapSection />
-        <DetailSection />
-      </main>
-    </Fragment>
+      <HomeView />
+    </>
   );
 };
 
