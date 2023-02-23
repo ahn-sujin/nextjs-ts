@@ -1,18 +1,29 @@
+import styled from 'styled-components';
 import Header from 'components/HomeHeader';
 import MapSection from 'views/Home/Map';
 import DetailSection from 'views/Home/Detail';
-import style from 'styles/home.module.scss';
 
 const HomeView = () => {
   return (
-    <div className={style.container}>
+    <Styled>
       <Header />
-      <main className={style.main}>
+      <main className="main">
         <MapSection />
         <DetailSection />
       </main>
-    </div>
+    </Styled>
   );
 };
 
 export default HomeView;
+
+const Styled = styled.div`
+  max-width: 430px;
+  height: 100%;
+  margin: 0 auto;
+
+  .main {
+    width: 100%;
+    height: 100%;
+  }
+`;

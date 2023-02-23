@@ -1,7 +1,13 @@
 import { useEffect } from 'react';
 import type { Marker } from 'types/map';
 
-const Marker = ({ map, coordinates, icon, onClick, name }: Marker): null => {
+const MarkerView = ({
+  map,
+  coordinates,
+  icon,
+  onClick,
+  name,
+}: Marker): null => {
   useEffect(() => {
     let marker: naver.maps.Marker | null = null;
     if (map) {
@@ -25,4 +31,4 @@ const Marker = ({ map, coordinates, icon, onClick, name }: Marker): null => {
   return null;
 };
 
-export default Marker;
+export default MarkerView;

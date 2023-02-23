@@ -1,12 +1,10 @@
 import { useCallback } from 'react';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import copy from 'copy-to-clipboard';
-import styles from 'styles/header.module.scss';
-import Header from 'components/common/Header';
-import useMap from 'hooks/useMap';
 import { AiOutlineShareAlt } from 'react-icons/ai';
-import { VscFeedback } from 'react-icons/vsc';
+import useMap from 'hooks/useMap';
+import Header from 'components/common/Header';
+import styled from 'styled-components';
 
 const HomeHeader = () => {
   const { resetMapOptions, getMapOptions } = useMap();
@@ -21,21 +19,36 @@ const HomeHeader = () => {
   }, [router, getMapOptions]);
 
   return (
-    <Header
-      onClickLogo={resetMapOptions}
-      rightElements={[
-        <button
-          onClick={replaceAndCopyUrl}
-          className={styles.box}
-          style={{ marginRight: 8 }}
-          key="button"
-          aria-label="현재 위치 클립보드 복사"
-        >
-          <AiOutlineShareAlt size={20} color="white" />
-        </button>,
-      ]}
-    />
+    <Styled>
+      <Header
+        onClickLogo={resetMapOptions}
+        rightElements={[
+          <button
+            onClick={replaceAndCopyUrl}
+            className="box"
+            key="button"
+            aria-label="현재 위치 클립보드 복사"
+          >
+            <AiOutlineShareAlt size={20} color="white" />
+          </button>,
+        ]}
+      />
+    </Styled>
   );
 };
 
 export default HomeHeader;
+
+const Styled = styled.div`
+  .box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    margin-right: 8px;
+    background-color: #f88a25;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 -2px 8px 0 rgba(136, 136, 136, 0.3);
+  }
+`;
