@@ -40,6 +40,12 @@ const HomeHeader = () => {
 export default HomeHeader;
 
 const Styled = styled.div`
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+
   .box {
     display: flex;
     align-items: center;

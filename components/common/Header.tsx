@@ -29,10 +29,10 @@ const HeaderComponent = ({ rightElements, onClickLogo }: Props) => {
 export default HeaderComponent;
 
 const Header = styled.header`
-  position: absolute;
+  /* position: absolute;
   top: 10px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%); */
   background: #fff;
 
   width: 410px;
@@ -40,9 +40,9 @@ const Header = styled.header`
   padding: 0 10px;
   border-radius: 30px;
 
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; */
 
   z-index: 100;
   pointer-events: none;
@@ -59,5 +59,6 @@ const Header = styled.header`
     pointer-events: auto;
     position: absolute;
     right: 10px;
+    top: 6px;
   }
 `;
