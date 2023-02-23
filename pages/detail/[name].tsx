@@ -1,10 +1,10 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import styles from '../styles/detail.module.scss';
-import type { Store } from '../types/store';
-import DetailHeader from '../components/home/DetailHeader';
-import DetailContent from '../components/home/DetailContent';
+import styles from 'styles/detail.module.scss';
+import type { Store } from 'types/store';
+import DetailHeader from 'components/home/DetailHeader';
+import DetailContent from 'components/home/DetailContent';
 import { useRouter } from 'next/router';
-import useCurrentStore from '../hooks/useCurrentStore';
+import useCurrentStore from 'hooks/useCurrentStore';
 import { NextSeo } from 'next-seo';
 
 interface Props {
@@ -52,14 +52,14 @@ export default StoreDetail;
 
 /** https://nextjs.org/docs/basic-features/data-fetching/get-static-paths */
 export const getStaticPaths: GetStaticPaths = async () => {
-  const stores = (await import('../public/stores.json')).default;
+  const stores = (await import('public/stores.json')).default;
   const paths = stores.map((store) => ({ params: { name: store.name } }));
 
   return { paths, fallback: false };
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const stores = (await import('../public/stores.json')).default;
+  const stores = (await import('public/stores.json')).default;
   const store = stores.find((store) => store.name === params?.name);
 
   return { props: { store } };

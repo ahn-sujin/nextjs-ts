@@ -1,12 +1,12 @@
 import { Fragment, use, useEffect } from 'react';
 import { NextPage } from 'next';
-import Header from '../components/home/Header';
-import MapSection from '../components/home/MapSection';
-import DetailSection from '../components/home/DetailSection';
-import { Store } from '../types/store';
-import useStores from '../hooks/useStores';
+import Header from 'components/home/Header';
+import MapSection from 'components/home/MapSection';
+import DetailSection from 'components/home/DetailSection';
+import { Store } from 'types/store';
+import useStores from 'hooks/useStores';
 import { NextSeo } from 'next-seo';
-import style from '../styles/home.module.scss';
+import style from 'styles/home.module.scss';
 
 interface Props {
   stores: Store[];

@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import type { Marker } from '../../types/map';
+import type { Marker } from 'types/map';
 
 const Marker = ({ map, coordinates, icon, onClick, name }: Marker): null => {
   useEffect(() => {

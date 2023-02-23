@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import Script from 'next/script';
-import { Coordinates } from '../../types/store';
-import { NaverMap } from '../../types/map';
-import { INITIAL_CENTER, INITIAL_ZOOM } from '../../hooks/useMap';
-import styles from '../../styles/map.module.scss';
+import { Coordinates } from 'types/store';
+import { NaverMap } from 'types/map';
+import { INITIAL_CENTER, INITIAL_ZOOM } from 'hooks/useMap';
+import styles from 'styles/map.module.scss';
 
 type Props = {
   mapId?: string;

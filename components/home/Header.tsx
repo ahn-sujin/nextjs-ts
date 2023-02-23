@@ -2,9 +2,9 @@ import { useCallback } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import copy from 'copy-to-clipboard';
-import styles from '../../styles/header.module.scss';
-import Header from '../common/Header';
-import useMap from '../../hooks/useMap';
+import styles from 'styles/header.module.scss';
+import Header from 'components/common/Header';
+import useMap from 'hooks/useMap';
 import { AiOutlineShareAlt } from 'react-icons/ai';
 import { VscFeedback } from 'react-icons/vsc';
 

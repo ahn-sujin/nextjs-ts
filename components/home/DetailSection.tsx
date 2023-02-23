@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import useSWR from 'swr';
-import { CURRENT_STORE_KEY } from '../../hooks/useCurrentStore';
-import type { Store } from '../../types/store';
-import styles from '../../styles/detail.module.scss';
-import DetailHeader from './DetailHeader';
-import DetailContent from './DetailContent';
+import { CURRENT_STORE_KEY } from 'hooks/useCurrentStore';
+import type { Store } from 'types/store';
+import styles from 'styles/detail.module.scss';
+import DetailHeader from 'components/home/DetailHeader';
+import DetailContent from 'components/home/DetailContent';
 
 const DetailSection = () => {
   const { data: currentStore } = useSWR<Store>(CURRENT_STORE_KEY);
