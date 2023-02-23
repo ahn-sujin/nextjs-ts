@@ -5,13 +5,13 @@ import style from 'styles/home.module.scss';
 
 const HomeView = () => {
   return (
-    <>
+    <div className={style.container}>
       <Header />
       <main className={style.main}>
         <MapSection />
         <DetailSection />
       </main>
-    </>
+    </div>
   );
 };
 
