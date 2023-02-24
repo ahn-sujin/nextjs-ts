@@ -52,6 +52,7 @@ const Header = styled.header`
     left: 48%;
     top: 10px;
     transform: translateX(-50%);
+    pointer-events: auto;
   }
 
   > .flex_item {
