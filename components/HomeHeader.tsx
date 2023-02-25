@@ -46,6 +46,10 @@ const Styled = styled.div`
   transform: translateX(-50%);
   z-index: 100;
 
+  @media (max-width: 480px) {
+    width: 100%;
+  }
+
   .box {
     display: flex;
     align-items: center;

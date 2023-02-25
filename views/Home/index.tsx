@@ -22,6 +22,10 @@ const Styled = styled.div`
   height: 100vh;
   margin: 0 auto;
 
+  @media (max-width: 480px) {
+    max-width: 100%;
+  }
+
   .main {
     width: 100%;
     height: 100%;
