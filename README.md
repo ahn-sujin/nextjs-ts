@@ -8,7 +8,7 @@
   ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
   ![NextJs](http://img.shields.io/badge/-Next.js-000?style=flat-square&logo=next.js&link=http://zi-gae.github.io/)
   ![SWR](https://img.shields.io/badge/-swr-000?style=flat-square&logo=next.js&link=http://zi-gae.github.io/)
-  ![SASS](https://img.shields.io/badge/Sass-CC6699?style=flat-square&logo=sass&logoColor=white)
+  ![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=flat-square&logo=styled-components&logoColor=white)
   
  [📍맛집일기 보러가기](https://sujin-map.vercel.app/)
   
@@ -42,8 +42,11 @@
 - `Next.js` 를 개발한 팀이 만든 상태 관리 라이브러리로, `react query`에 비행 진입 장벽이 낮고 **fetch속도가 빠르며 코드가 경량화** 되어 있어 간단한 프로젝트를 만들 때 사용하기 좋음
 - 이 프로젝트에서는 최소한의 전역 상태 저장 용도로 사용
 
-### `SCSS`
+### `SCSS` + `style-components`
+<div align="left">
 <img width="80" alt="SCSS" src="https://user-images.githubusercontent.com/67556491/220368281-bcb83a8a-3cd0-4692-9ca8-37104f7f22d1.png" />
+<img width="80" alt="style-components" src="https://user-images.githubusercontent.com/67556491/221363549-fdb0dbff-447e-4407-9dd3-c173033b8045.png"/>
+</div>
 
 - `css`의 불편한 점(불필요한 선택자, 연산 기능 한계, 구문의 부재 등) 해결 및 코드의 가독성과 재사용성을 위해 사용
 
