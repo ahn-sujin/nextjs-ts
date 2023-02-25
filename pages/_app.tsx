@@ -1,8 +1,8 @@
-import '../styles/globals.scss';
 import type { AppProps } from 'next/app';
 import { DefaultSeo } from 'next-seo';
 import Script from 'next/script';
 import SEO from '../seo.config';
+import GlobalStyle from 'styles/GlobalStyle';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -22,6 +22,7 @@ export default function App({ Component, pageProps }: AppProps) {
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=G-8ZFD6DRJE7`}
       />
+      <GlobalStyle />
       <Component {...pageProps} />
     </>
   );

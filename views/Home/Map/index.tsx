@@ -1,11 +1,11 @@
 import { useMemo } from 'react';
 import { useRouter } from 'next/router';
-import Map from './Map';
-import Markers from './Markers';
-import useMap, { INITIAL_CENTER, INITIAL_ZOOM } from '../../hooks/useMap';
-import useCurrentStore from '../../hooks/useCurrentStore';
-import type { NaverMap } from '../../types/map';
-import { Coordinates } from '../../types/store';
+import Map from 'view/Home/Map/Map';
+import Markers from 'view/Home/Map/Markers';
+import useMap, { INITIAL_CENTER, INITIAL_ZOOM } from 'hooks/useMap';
+import useCurrentStore from 'hooks/useCurrentStore';
+import type { NaverMap } from 'types/map';
+import { Coordinates } from 'types/store';
 
 const MapSection = () => {
   /** url query로 부터 initial zoom, center 값 설정 */
