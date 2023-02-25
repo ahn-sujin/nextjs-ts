@@ -47,6 +47,10 @@ const Header = styled.header`
   z-index: 100;
   pointer-events: none;
 
+  @media (max-width: 480px) {
+    width: 100%;
+  }
+
   > .logo {
     position: absolute;
     left: 48%;

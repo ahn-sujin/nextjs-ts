@@ -94,5 +94,9 @@ const Styled = styled.div`
     &.expanded {
       transform: translateY(0);
     }
+
+    @media (max-width: 480px) {
+      width: 100%;
+    }
   }
 `;

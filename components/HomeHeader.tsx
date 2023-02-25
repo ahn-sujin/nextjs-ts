@@ -47,7 +47,9 @@ const Styled = styled.div`
   z-index: 100;
 
   @media (max-width: 480px) {
-    width: 100%;
+    width: calc(100% - 20px);
+    left: 10px;
+    transform: translateX(0);
   }
 
   .box {
