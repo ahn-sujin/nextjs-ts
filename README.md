@@ -8,6 +8,7 @@
   ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
   ![NextJs](http://img.shields.io/badge/-Next.js-000?style=flat-square&logo=next.js&link=http://zi-gae.github.io/)
   ![SWR](https://img.shields.io/badge/-swr-000?style=flat-square&logo=next.js&link=http://zi-gae.github.io/)
+  ![SASS](https://img.shields.io/badge/Sass-CC6699?style=flat-square&logo=sass&logoColor=white)
   ![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=flat-square&logo=styled-components&logoColor=white)
   
  [📍맛집일기 보러가기](https://sujin-map.vercel.app/)
@@ -48,7 +49,8 @@
 <img width="80" alt="style-components" src="https://user-images.githubusercontent.com/67556491/221363549-fdb0dbff-447e-4407-9dd3-c173033b8045.png"/>
 </div>
 
-- `css`의 불편한 점(불필요한 선택자, 연산 기능 한계, 구문의 부재 등) 해결 및 코드의 가독성과 재사용성을 위해 사용
+- `CSS`의 불편한 점(불필요한 선택자, 연산 기능 한계, 구문의 부재 등) 해결 및 코드의 가독성과 재사용성을 위해 사용
+- CSS-in-JS 방식을 통해 따로 `SCSS`파일을 생성하지 않고 해당 컴포넌트에서 스타일을 관리할 수 있도록 `style-components`를 도입
 
 <br />
 
