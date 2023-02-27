@@ -1,23 +1,35 @@
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 import { useRouter } from 'next/router';
 import copy from 'copy-to-clipboard';
-import { AiOutlineShareAlt, AiOutlineMenu } from 'react-icons/ai';
+import styled from 'styled-components';
+import {
+  AiOutlineShareAlt,
+  AiOutlineMenu,
+  AiOutlineCopy,
+} from 'react-icons/ai';
 import { BsFillPinMapFill } from 'react-icons/bs';
 import useMap from 'hooks/useMap';
 import Header from 'components/common/Header';
-import styled from 'styled-components';
+import Modal from 'components/Modal';
+import CircleAlert from 'components/Alert/CircleAlert';
 
 const HomeHeader = () => {
-  const { resetMapOptions, getMapOptions } = useMap();
+  const [isAlertOpen, setIsAlertOpen] = useState(false);
 
-  const router = useRouter();
+  const openAlert = () => {
+    setIsAlertOpen(true);
+  };
+
+  const closeAlert = () => {
+    setIsAlertOpen(false);
+  };
+
+  const { resetMapOptions, getMapOptions } = useMap();
   const replaceAndCopyUrl = useCallback(() => {
     const mapOptions = getMapOptions();
     const query = `/?zoom=${mapOptions.zoom}&lat=${mapOptions.center[0]}&lng=${mapOptions.center[1]}`;
-
-    router.replace(query);
     copy(location.origin + query);
-  }, [router, getMapOptions]);
+  }, [getMapOptions]);
 
   return (
     <Styled>
@@ -25,35 +37,44 @@ const HomeHeader = () => {
         onClickLogo={resetMapOptions}
         rightElements={[
           <button
-            onClick={replaceAndCopyUrl}
+            onClick={() => {
+              replaceAndCopyUrl(), openAlert(), setTimeout(closeAlert, 2000);
+            }}
             className="box"
-            key="button"
+            key="copy_button"
             aria-label="현재 위치 클립보드 복사"
           >
-            <AiOutlineShareAlt size={20} color="white" />
+            <AiOutlineShareAlt size="1.25rem" color="white" />
           </button>,
           <button
             onClick={() => {
               console.log('리스트 페이지로 이동');
             }}
             className="box"
-            key="button"
+            key="list_button"
             aria-label="리스트 페이지로 이동"
           >
-            <AiOutlineMenu size={20} color="white" />
+            <AiOutlineMenu size="1.25rem" color="white" />
           </button>,
           <button
             onClick={() => {
               console.log('지도 페이지로 이동');
             }}
             className="box"
-            key="button"
+            key="map_button"
             aria-label="지도 페이지로 이동"
           >
-            <BsFillPinMapFill size={20} color="white" />
+            <BsFillPinMapFill size="1.25rem" color="white" />
           </button>,
         ]}
       />
+      <CircleAlert isAlertOpen={isAlertOpen}>
+        <AiOutlineCopy size="2.813rem" color="white" />
+        <p className="alert_text">
+          현재 위치가
+          <br /> 복사되었습니다.
+        </p>
+      </CircleAlert>
     </Styled>
   );
 };
@@ -81,5 +102,11 @@ const Styled = styled.div`
     :last-of-type {
       margin-right: 0;
     }
+  }
+  .alert_text {
+    margin-top: 0.5rem;
+    text-align: center;
+    color: #fff;
+    font-size: 0.875rem;
   }
 `;

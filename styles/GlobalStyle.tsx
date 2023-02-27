@@ -18,6 +18,12 @@ body {
   line-height: 1.5;
 }
 
+@media(max-width:480px){
+  html,
+  body{
+    font-size: 13px;
+  }
+}
 
 #__next {
     display: contents;

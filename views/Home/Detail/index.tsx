@@ -35,7 +35,6 @@ const Styled = styled.div`
     bottom: 0;
     width: 430px;
     height: 78px;
-    z-index: 101;
     display: flex;
     flex-direction: column;
     padding: 10px 0 0;
@@ -55,6 +54,7 @@ const Styled = styled.div`
     &.expanded {
       height: 100%;
       transform: translateY(0);
+      z-index: 101;
     }
 
     @media (max-width: 480px) {
