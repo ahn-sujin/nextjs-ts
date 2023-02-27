@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { IoIosArrowUp } from 'react-icons/io';
 import { AiOutlineShareAlt } from 'react-icons/ai';
 import type { Store } from 'types/store';
@@ -24,13 +25,18 @@ const DetailHeader = ({ currentStore, expanded, onClickArrow }: Props) => {
         </button>
         {!currentStore && (
           <p className="title">
-            📍맛집을 <span>선택</span>해주세요!
+            📍매장을 <span>선택</span>해주세요!
           </p>
         )}
         {currentStore && (
           <div className="flex_row">
             <p className="name">
-              {currentStore.name}
+              <Link
+                href={`/detail/${currentStore.name}`}
+                arial-label="디테일 페이지로 이동"
+              >
+                {currentStore.name}
+              </Link>
               <span className="sub_title">{currentStore.foodKind}</span>
             </p>
             <button

@@ -1,16 +1,15 @@
 import { useCallback, useState } from 'react';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import copy from 'copy-to-clipboard';
 import styled from 'styled-components';
 import {
   AiOutlineShareAlt,
-  AiOutlineMenu,
+  AiOutlineUnorderedList,
   AiOutlineCopy,
 } from 'react-icons/ai';
-import { BsFillPinMapFill } from 'react-icons/bs';
 import useMap from 'hooks/useMap';
 import Header from 'components/common/Header';
-import Modal from 'components/Modal';
 import CircleAlert from 'components/Alert/CircleAlert';
 
 const HomeHeader = () => {
@@ -34,6 +33,7 @@ const HomeHeader = () => {
   return (
     <Styled>
       <Header
+        logo
         onClickLogo={resetMapOptions}
         rightElements={[
           <button
@@ -46,26 +46,14 @@ const HomeHeader = () => {
           >
             <AiOutlineShareAlt size="1.25rem" color="white" />
           </button>,
-          <button
-            onClick={() => {
-              console.log('리스트 페이지로 이동');
-            }}
+          <Link
+            href="/list"
             className="box"
             key="list_button"
             aria-label="리스트 페이지로 이동"
           >
-            <AiOutlineMenu size="1.25rem" color="white" />
-          </button>,
-          <button
-            onClick={() => {
-              console.log('지도 페이지로 이동');
-            }}
-            className="box"
-            key="map_button"
-            aria-label="지도 페이지로 이동"
-          >
-            <BsFillPinMapFill size="1.25rem" color="white" />
-          </button>,
+            <AiOutlineUnorderedList size="1.25rem" color="white" />
+          </Link>,
         ]}
       />
       <CircleAlert isAlertOpen={isAlertOpen}>
@@ -99,7 +87,7 @@ const Styled = styled.div`
     border-radius: 4px;
     box-shadow: 0 -2px 8px 0 rgba(136, 136, 136, 0.3);
 
-    :last-of-type {
+    :last-child {
       margin-right: 0;
     }
   }
