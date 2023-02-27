@@ -33,11 +33,13 @@ const Styled = styled.div`
     background: ${BaseStyle.colors.primary};
     opacity: 0;
     transition: all 0.5s;
+    visibility: hidden;
 
     &.view {
       top: 30%;
       transform: translate(-50%, -30%);
       opacity: 1;
+      visibility: visible;
     }
   }
 `;

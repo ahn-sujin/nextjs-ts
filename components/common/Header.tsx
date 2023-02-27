@@ -36,6 +36,10 @@ const Header = styled.header`
   margin: 0 auto;
   padding: 10px 20px;
 
+  @media (max-width: 480px) {
+    width: 100%;
+  }
+
   > .logo {
     background: #fff;
     padding: 6px 8px 0px 10px;
