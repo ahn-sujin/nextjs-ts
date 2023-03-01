@@ -9,7 +9,6 @@ import Header from 'components/common/Header';
 
 const StoreList = () => {
   const { data: stores } = useSWR<Store[]>(STORE_KEY);
-  console.log('store', typeof stores);
 
   if (!stores) return null;
   return (
@@ -34,19 +33,19 @@ const StoreList = () => {
                     {name}
                     <span>{foodKind}</span>
                   </p>
-                  <p className="info short one">
+                  <p className="info">
                     <IoLocationOutline
                       size="1.125rem"
                       color={BaseStyle.colors.primary}
                     />
-                    {address}
+                    <span>{address}</span>
                   </p>
-                  <p className="info short one">
+                  <p className="info">
                     <IoCallOutline
                       size="1.125rem"
                       color={BaseStyle.colors.primary}
                     />
-                    {phone}
+                    <span>{phone}</span>
                   </p>
                   <p className="short two">{description}</p>
                 </div>
@@ -70,11 +69,6 @@ const Styled = styled.div`
     max-width: 100%;
   }
 
-  /* > header {
-    border: solid ${BaseStyle.gray.sub};
-    border-width: 0 1px 1px 1px;
-  } */
-
   > .container {
     padding: 20px 0;
 
@@ -93,7 +87,7 @@ const Styled = styled.div`
           background: #000;
         }
         > .text_box {
-          width: calc(100% - 6.25rem);
+          width: calc(100% - 7.25rem);
           margin-left: 1rem;
 
           > .store_name {
@@ -106,6 +100,7 @@ const Styled = styled.div`
               font-size: 0.875rem;
               font-weight: 400;
               color: ${BaseStyle.gray.sub};
+              vertical-align: text-top;
             }
           }
 
@@ -124,6 +119,8 @@ const Styled = styled.div`
               display: -webkit-box;
               -webkit-box-orient: vertical;
               -webkit-line-clamp: 2;
+              font-size: 0.75rem;
+              color: ${BaseStyle.gray.sub};
             }
           }
 
@@ -132,6 +129,12 @@ const Styled = styled.div`
             align-items: flex-start;
             gap: 0.2rem;
             margin-bottom: 0.3rem;
+            font-size: 0.875rem;
+
+            > span {
+              width: calc(100% - 1.125rem);
+              font-size: 0.875rem;
+            }
           }
         }
       }
