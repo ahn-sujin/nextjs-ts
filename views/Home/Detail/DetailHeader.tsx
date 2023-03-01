@@ -1,9 +1,14 @@
+import { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { IoIosArrowUp } from 'react-icons/io';
-import { AiOutlineShareAlt } from 'react-icons/ai';
+import { AiOutlineShareAlt, AiOutlineCopy } from 'react-icons/ai';
+import { CiCircleMore } from 'react-icons/ci';
 import type { Store } from 'types/store';
 import copy from 'copy-to-clipboard';
 import styled from 'styled-components';
+import BaseStyle from 'components/common/BaseStyle';
+import CircleAlert from 'components/Alert/CircleAlert';
 
 interface Props {
   currentStore?: Store;
@@ -12,6 +17,19 @@ interface Props {
 }
 
 const DetailHeader = ({ currentStore, expanded, onClickArrow }: Props) => {
+  const [isAlertOpen, setIsAlertOpen] = useState(false);
+
+  const openAlert = () => {
+    setIsAlertOpen(true);
+  };
+
+  const closeAlert = () => {
+    setIsAlertOpen(false);
+  };
+
+  const router = useRouter();
+  console.log(router.pathname);
+
   return (
     <Styled>
       <div className="header">
@@ -39,17 +57,33 @@ const DetailHeader = ({ currentStore, expanded, onClickArrow }: Props) => {
               </Link>
               <span className="sub_title">{currentStore.foodKind}</span>
             </p>
-            <button
-              onClick={() => {
-                copy(location.origin + '/detail/' + currentStore.name);
-              }}
-              aria-label="매장 정보 주소 클립보드 복사"
-            >
-              <AiOutlineShareAlt size={24} color="#F88A25" />
-            </button>
+            {router.pathname === '/' && (
+              <button className="more_btn">
+                <Link href={`/detail/${currentStore.name}`}>자세히</Link>
+              </button>
+            )}
+            {router.pathname === '/detail/[name]' && (
+              <button
+                onClick={() => {
+                  copy(location.origin + '/detail/' + currentStore.name),
+                    openAlert(),
+                    setTimeout(closeAlert, 2000);
+                }}
+                aria-label="매장 정보 주소 클립보드 복사"
+              >
+                <AiOutlineShareAlt size={24} color="#F88A25" />
+              </button>
+            )}
           </div>
         )}
       </div>
+      <CircleAlert isAlertOpen={isAlertOpen}>
+        <AiOutlineCopy size="2.813rem" color="white" />
+        <p className="alert_text">
+          URL이
+          <br /> 복사되었습니다.
+        </p>
+      </CircleAlert>
     </Styled>
   );
 };
@@ -109,17 +143,32 @@ const Styled = styled.div`
       align-items: center;
 
       > .name {
-        margin: 4px 0;
+        margin: 0.25rem 0;
         font-size: 1.25rem;
         font-weight: 700;
 
         > .sub_title {
-          margin-left: 8px;
+          margin-left: 0.5em;
           font-size: 0.813rem;
           font-weight: 400;
           color: #8f8f8f;
         }
       }
+
+      > .more_btn {
+        padding: 0.313rem 0.625rem;
+        background: ${BaseStyle.colors.primary};
+        color: #fff;
+        font-size: 0.75rem;
+        border-radius: 2.5rem;
+      }
     }
+  }
+
+  .alert_text {
+    margin-top: 0.5rem;
+    text-align: center;
+    color: #fff;
+    font-size: 0.875rem;
   }
 `;

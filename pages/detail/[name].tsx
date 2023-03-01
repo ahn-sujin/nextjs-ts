@@ -80,10 +80,6 @@ const Styled = styled.div`
     flex-direction: column;
     padding: 10px 0 0;
     background-color: white;
-    color: #444444;
-    border-top-left-radius: 24px;
-    border-top-right-radius: 24px;
-    box-shadow: 0 -2px 8px 0 rgba(136, 136, 136, 0.3);
     transition: transform 800ms;
     transform: translateY(calc(100% - 68px));
 
