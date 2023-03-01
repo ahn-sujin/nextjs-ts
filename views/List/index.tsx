@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import useSWR from 'swr';
 import styled from 'styled-components';
 import { IoCallOutline, IoLocationOutline } from 'react-icons/io5';
@@ -30,7 +31,7 @@ const StoreList = () => {
                 </div>
                 <div className="text_box">
                   <p className="store_name">
-                    {name}
+                    <Link href={`/detail/${name}`}>{name}</Link>
                     <span>{foodKind}</span>
                   </p>
                   <p className="info">
