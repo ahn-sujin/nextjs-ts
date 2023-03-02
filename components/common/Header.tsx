@@ -51,13 +51,21 @@ const HeaderComponent = ({
 export default HeaderComponent;
 
 const Header = styled.header`
-  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 430px;
   margin: 0 auto;
   padding: 20px;
+
+  &.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    z-index: 999;
+  }
 
   @media (max-width: 480px) {
     width: 100%;
