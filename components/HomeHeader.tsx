@@ -35,6 +35,7 @@ const HomeHeader = () => {
       <Header
         logo
         onClickLogo={resetMapOptions}
+        isFixed={false}
         rightElements={[
           <button
             onClick={() => {

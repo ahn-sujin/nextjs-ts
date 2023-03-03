@@ -7,7 +7,7 @@ import { BiArrowBack } from 'react-icons/bi';
 interface Props {
   logo?: boolean;
   back?: boolean;
-  isHome?: boolean;
+  isFixed?: boolean;
   title?: string;
   rightElements?: React.ReactElement[];
   onClickLogo?: () => void;
@@ -16,13 +16,13 @@ interface Props {
 const HeaderComponent = ({
   logo = false,
   back = false,
-  isHome = false,
+  isFixed = false,
   title,
   rightElements,
   onClickLogo,
 }: Props) => {
   return (
-    <Header>
+    <Header className={`${isFixed ? 'fixed' : ''}`}>
       {logo && (
         <div className="logo">
           <Link href="/" onClick={onClickLogo} aria-label="홈으로 이동">

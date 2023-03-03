@@ -14,7 +14,7 @@ const StoreList = () => {
   if (!stores) return null;
   return (
     <Styled>
-      <Header back title="매장 리스트" />
+      <Header back title="매장 리스트" isFixed />
       <div className="container">
         <ul className="cart_wrap">
           {stores.map(
@@ -71,7 +71,7 @@ const Styled = styled.div`
   }
 
   > .container {
-    padding: 20px 0;
+    padding: 5.9rem 0 1.25rem;
 
     > .cart_wrap {
       > .card_item {
