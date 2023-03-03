@@ -5,7 +5,6 @@ import useCurrentStore from 'hooks/useCurrentStore';
 import type { Store } from 'types/store';
 import DetailHeader from 'views/Home/Detail/DetailHeader';
 import DetailContent from 'views/Home/Detail/DetailContent';
-import styles from 'styles/detail.module.scss';
 import styled from 'styled-components';
 
 interface Props {
