@@ -26,10 +26,10 @@ export default ItemCategory;
 const Styled = styled.div`
   > .category_list {
     position: fixed;
-    left: 0;
     top: 3.5rem;
+    max-width: 430px;
     display: flex;
-    padding: 0.938rem 1.25rem 0 1.25rem;
+    padding-top: 0.938rem;
     margin-bottom: 1.25rem;
     white-space: nowrap;
     overflow-x: auto;
@@ -43,6 +43,7 @@ const Styled = styled.div`
       line-height: 2rem;
       padding: 0px 0.938rem;
       color: ${BaseStyle.gray.sub};
+      font-size: 0.875rem;
 
       &.active {
         position: relative;
