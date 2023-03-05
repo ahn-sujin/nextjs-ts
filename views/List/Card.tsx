@@ -1,20 +1,31 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import type { Store } from 'types/store';
 import BaseStyle from 'components/common/BaseStyle';
 import { IoCallOutline, IoLocationOutline } from 'react-icons/io5';
 
 type Props = {
-  stores?: Store;
+  currentStore?: Store;
 };
 
-const CardList = ({ stores }: Props) => {
-  if (!stores) return null;
+const CardList = ({ currentStore }: Props) => {
+  if (!currentStore) return null;
+
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const router = useRouter();
+
+  const foodKindList = currentStore.filter(
+    (name: Store) => name.foodKind === '치킨,닭강정'
+  );
+  // console.log('foodKindList', foodKindList);
+  // console.log('router', router.pathname.slice(5));
+
   return (
     <Styled>
       <ul className="card_wrap">
-        {stores.map(
+        {currentStore.map(
           ({
             nid,
             name,

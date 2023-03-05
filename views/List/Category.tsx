@@ -1,21 +1,29 @@
+import Link from 'next/link';
+import type { Store } from 'types/store';
 import styled from 'styled-components';
 import BaseStyle from 'components/common/BaseStyle';
 
-const ItemCategory = () => {
+type Props = {
+  currentStore?: Store;
+};
+
+const ItemCategory = ({ currentStore }: Props) => {
+  if (!currentStore) return null;
+
+  console.log(currentStore);
   return (
     <Styled>
       <ul className="category_list">
-        <li className="active">전체</li>
-        <li>중식</li>
-        <li>일식</li>
-        <li>한식</li>
-        <li>중식</li>
-        <li>일식</li>
-        <li>한식</li>
-        <li>양식</li>
-        <li>중식</li>
-        <li>일식</li>
-        <li>한식</li>
+        {currentStore.map(({ nid, foodKind }: Store) => (
+          <li key={nid}>
+            <Link
+              href={`/list/${foodKind}`}
+              aria-label="카테고리 리스트 페이지로 이동"
+            >
+              {foodKind}
+            </Link>
+          </li>
+        ))}
       </ul>
     </Styled>
   );

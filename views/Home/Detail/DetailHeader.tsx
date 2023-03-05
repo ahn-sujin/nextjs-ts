@@ -28,7 +28,6 @@ const DetailHeader = ({ currentStore, expanded, onClickArrow }: Props) => {
   };
 
   const router = useRouter();
-  console.log(router.pathname);
 
   return (
     <Styled>
@@ -51,7 +50,7 @@ const DetailHeader = ({ currentStore, expanded, onClickArrow }: Props) => {
             <p className="name">
               <Link
                 href={`/detail/${currentStore.name}`}
-                arial-label="디테일 페이지로 이동"
+                aria-label="디테일 페이지로 이동"
               >
                 {currentStore.name}
               </Link>
