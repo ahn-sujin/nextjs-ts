@@ -7,25 +7,45 @@ import BaseStyle from 'components/common/BaseStyle';
 import { IoCallOutline, IoLocationOutline } from 'react-icons/io5';
 
 type Props = {
-  currentStore?: Store;
+  stores?: Store;
 };
 
-const CardList = ({ currentStore }: Props) => {
-  if (!currentStore) return null;
-
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const router = useRouter();
-
-  const foodKindList = currentStore.filter(
-    (name: Store) => name.foodKind === '치킨,닭강정'
-  );
-  // console.log('foodKindList', foodKindList);
-  // console.log('router', router.pathname.slice(5));
+const CardList = ({ stores }: Props) => {
+  if (!stores) return null;
 
   return (
     <Styled>
       <ul className="card_wrap">
-        {currentStore.map(
+        {/* <li key={stores.nid} className="card_item">
+          <div className="image_box">
+            <Image
+              src={stores.images[0]}
+              alt="매장 대표 이미지"
+              fill
+              sizes="100px"
+              object-fit="cover"
+            />
+          </div>
+          <div className="text_box">
+            <p className="store_name">
+              <Link href={`/detail/${stores.name}`}>{stores.name}</Link>
+              <span>{stores.foodKind}</span>
+            </p>
+            <p className="info">
+              <IoLocationOutline
+                size="1.125rem"
+                color={BaseStyle.colors.primary}
+              />
+              <span>{stores.address}</span>
+            </p>
+            <p className="info">
+              <IoCallOutline size="1.125rem" color={BaseStyle.colors.primary} />
+              <span>{stores.phone}</span>
+            </p>
+            <p className="short two">{stores.description}</p>
+          </div>
+        </li> */}
+        {stores.map(
           ({
             nid,
             name,

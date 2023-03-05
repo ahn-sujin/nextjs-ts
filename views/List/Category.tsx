@@ -4,17 +4,25 @@ import styled from 'styled-components';
 import BaseStyle from 'components/common/BaseStyle';
 
 type Props = {
-  currentStore?: Store;
+  stores?: Store;
 };
 
-const ItemCategory = ({ currentStore }: Props) => {
-  if (!currentStore) return null;
+const ItemCategory = ({ stores }: Props) => {
+  if (!stores) return null;
 
-  console.log(currentStore);
+  console.log(stores);
   return (
     <Styled>
       <ul className="category_list">
-        {currentStore.map(({ nid, foodKind }: Store) => (
+        {/* <li key={stores.nid}>
+          <Link
+            href={`/list/${stores.foodKind}`}
+            aria-label="카테고리 리스트 페이지로 이동"
+          >
+            {stores.foodKind}
+          </Link>
+        </li> */}
+        {stores.map(({ nid, foodKind }: Store) => (
           <li key={nid}>
             <Link
               href={`/list/${foodKind}`}

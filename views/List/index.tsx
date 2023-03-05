@@ -14,8 +14,8 @@ const StoreList = () => {
     <Styled>
       <Header back title="매장 리스트" isFixed />
       <div className="container">
-        <StoreListCategory currentStore={stores} />
-        <StoreListCard currentStore={stores} />
+        <StoreListCategory stores={stores} />
+        <StoreListCard stores={stores} />
       </div>
     </Styled>
   );
