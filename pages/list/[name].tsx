@@ -7,7 +7,6 @@ import ListCategory from 'views/List/Category';
 import ListCard from 'views/List/Card';
 import styled from 'styled-components';
 import Header from 'components/common/Header';
-import ListView from 'views/List/index';
 
 interface Props {
   store: Store;
@@ -29,7 +28,7 @@ const FoodKindList: NextPage<Props> = ({ store }) => {
       <Styled>
         <Header back title="매장 리스트" isFixed />
         <div className="">
-          <ListCategory />
+          <ListCategory stores={store} />
           <ListCard stores={store} />
         </div>
       </Styled>

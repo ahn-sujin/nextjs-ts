@@ -16,35 +16,6 @@ const CardList = ({ stores }: Props) => {
   return (
     <Styled>
       <ul className="card_wrap">
-        {/* <li key={stores.nid} className="card_item">
-          <div className="image_box">
-            <Image
-              src={stores.images[0]}
-              alt="매장 대표 이미지"
-              fill
-              sizes="100px"
-              object-fit="cover"
-            />
-          </div>
-          <div className="text_box">
-            <p className="store_name">
-              <Link href={`/detail/${stores.name}`}>{stores.name}</Link>
-              <span>{stores.foodKind}</span>
-            </p>
-            <p className="info">
-              <IoLocationOutline
-                size="1.125rem"
-                color={BaseStyle.colors.primary}
-              />
-              <span>{stores.address}</span>
-            </p>
-            <p className="info">
-              <IoCallOutline size="1.125rem" color={BaseStyle.colors.primary} />
-              <span>{stores.phone}</span>
-            </p>
-            <p className="short two">{stores.description}</p>
-          </div>
-        </li> */}
         {stores.map(
           ({
             nid,

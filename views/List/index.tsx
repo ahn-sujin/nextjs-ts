@@ -14,7 +14,7 @@ const StoreList = () => {
     <Styled>
       <Header back title="매장 리스트" isFixed />
       <div className="container">
-        <StoreListCategory stores={stores} />
+        {/* <StoreListCategory stores={stores} /> */}
         <StoreListCard stores={stores} />
       </div>
     </Styled>
@@ -33,6 +33,6 @@ const Styled = styled.div`
   }
 
   > .container {
-    padding: 8.125rem 0 1.25rem;
+    padding: 5rem 0 1.25rem;
   }
 `;
