@@ -56,23 +56,9 @@ const DetailHeader = ({ currentStore, expanded, onClickArrow }: Props) => {
               </Link>
               <span className="sub_title">{currentStore.foodKind}</span>
             </p>
-            {router.pathname === '/' && (
-              <button className="more_btn">
-                <Link href={`/detail/${currentStore.name}`}>자세히</Link>
-              </button>
-            )}
-            {router.pathname === '/detail/[name]' && (
-              <button
-                onClick={() => {
-                  copy(location.origin + '/detail/' + currentStore.name),
-                    openAlert(),
-                    setTimeout(closeAlert, 2000);
-                }}
-                aria-label="매장 정보 주소 클립보드 복사"
-              >
-                <AiOutlineShareAlt size={24} color="#F88A25" />
-              </button>
-            )}
+            <button className="more_btn">
+              <Link href={`/detail/${currentStore.name}`}>자세히</Link>
+            </button>
           </div>
         )}
       </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import Router, { useRouter } from 'next/router';
 import styled from 'styled-components';
 import { BiArrowBack } from 'react-icons/bi';
 
@@ -21,6 +22,8 @@ const HeaderComponent = ({
   rightElements,
   onClickLogo,
 }: Props) => {
+  const router = useRouter();
+
   return (
     <Header className={`${isFixed ? 'fixed' : ''}`}>
       {logo && (
@@ -36,11 +39,9 @@ const HeaderComponent = ({
         </div>
       )}
       {back && (
-        <div className="back">
-          <Link href="/" aria-label="홈으로 이동">
-            <BiArrowBack size="1.25rem" />
-          </Link>
-        </div>
+        <button type="button" className="back" onClick={() => router.back()}>
+          <BiArrowBack size="1.25rem" />
+        </button>
       )}
       <div className="title">{title}</div>
       {rightElements && <div className="flex_item">{rightElements}</div>}
@@ -56,7 +57,7 @@ const Header = styled.header`
   align-items: center;
   width: 430px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 15px 20px 10px;
 
   &.fixed {
     position: fixed;
