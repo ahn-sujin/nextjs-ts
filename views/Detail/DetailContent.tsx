@@ -89,7 +89,7 @@ const Styled = styled.div`
       grid-template-columns: repeat(3, minmax(auto, 120px));
       justify-content: center;
       gap: 12px;
-      margin: 1rem 0;
+      margin-bottom: 1rem;
       padding: 0 1.25rem;
     }
 
