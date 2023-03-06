@@ -13,7 +13,6 @@ interface Props {
 }
 
 const FoodKindList: NextPage<Props> = ({ store }) => {
-  console.log(store);
   return (
     <>
       <NextSeo
@@ -39,18 +38,18 @@ const FoodKindList: NextPage<Props> = ({ store }) => {
 export default FoodKindList;
 
 /** https://nextjs.org/docs/basic-features/data-fetching/get-static-paths */
-export const getStaticPaths: GetStaticPaths = async () => {
-  const stores = (await import('public/stores.json')).default;
-  const paths = stores.map((store) => ({ params: { name: store.foodKind } }));
+// export const getStaticPaths: GetStaticPaths = async () => {
+//   const stores = (await import('public/stores.json')).default;
+//   const paths = stores.map((store) => ({ params: { name: store.foodKind } }));
 
-  return { paths, fallback: false };
-};
+//   return { paths, fallback: false };
+// };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const stores = (await import('public/stores.json')).default;
-  const store = stores.find((store) => store.foodKind === params?.name);
+// export const getStaticProps: GetStaticProps = async ({ params }) => {
+//   const stores = (await import('public/stores.json')).default;
+//   const store = stores.find((store) => store.foodKind === params?.name);
 
-  return { props: { store } };
-};
+//   return { props: { store } };
+// };
 
 const Styled = styled.div``;
