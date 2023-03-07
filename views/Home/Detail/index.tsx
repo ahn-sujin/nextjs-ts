@@ -22,7 +22,7 @@ const HomeDetail = () => {
           expanded={expanded}
           onClickArrow={() => setExpanded(!expanded)}
         />
-        <DetailContent currentStore={currentStore} expanded={expanded} />
+        <DetailContent currentStore={currentStore} />
       </div>
     </Styled>
   );

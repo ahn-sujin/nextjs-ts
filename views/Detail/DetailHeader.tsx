@@ -110,12 +110,6 @@ const Styled = styled.div`
         color: #8f8f8f;
       }
     }
-
-    /* > button {
-      padding: 5px;
-      background: ${BaseStyle.colors.primary};
-      border-radius: 5px;
-    } */
   }
 
   .alert_text {

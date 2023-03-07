@@ -33,10 +33,12 @@ const DetailHeader = ({ currentStore, expanded, onClickArrow }: Props) => {
     <Styled>
       <div className="header">
         <button
-          className={`arrow_button ${expanded ? 'expanded' : ''}`}
-          onClick={onClickArrow}
+          className="arrow_button"
+          onClick={() => {
+            router.push(`/detail/${currentStore?.name}`);
+          }}
           disabled={!currentStore}
-          aria-label={expanded ? '매장 정보 접기' : '매장 정보 펼치기'}
+          aria-label="매장 상세 페이지로 이동"
         >
           <IoIosArrowUp size={20} color="#666666" />
         </button>
@@ -56,9 +58,6 @@ const DetailHeader = ({ currentStore, expanded, onClickArrow }: Props) => {
               </Link>
               <span className="sub_title">{currentStore.foodKind}</span>
             </p>
-            <button className="more_btn">
-              <Link href={`/detail/${currentStore.name}`}>자세히</Link>
-            </button>
           </div>
         )}
       </div>
@@ -138,14 +137,6 @@ const Styled = styled.div`
           font-weight: 400;
           color: #8f8f8f;
         }
-      }
-
-      > .more_btn {
-        padding: 0.313rem 0.625rem;
-        background: ${BaseStyle.colors.primary};
-        color: #fff;
-        font-size: 0.75rem;
-        border-radius: 2.5rem;
       }
     }
   }

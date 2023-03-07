@@ -1,16 +1,66 @@
+import { useEffect, useRef } from 'react';
 import Image from 'next/image';
-import type { Store } from 'types/store';
-import Naver from 'public/images/naver.png';
-import { IoCallOutline, IoLocationOutline } from 'react-icons/io5';
+import Link from 'next/link';
+import Script from 'next/script';
 import styled from 'styled-components';
+import { NaverMap } from 'types/map';
+import type { Store } from 'types/store';
+import { INITIAL_ZOOM } from 'hooks/useMap';
+import { IoCallOutline, IoLocationOutline } from 'react-icons/io5';
 
 type Props = {
   currentStore?: Store;
+  mapId?: string;
+  initialZoom?: number;
+  onLoad?: (map: NaverMap, marker: NaverMap) => void;
 };
 
-const DetailContent = ({ currentStore }: Props) => {
+const DetailContent = ({
+  mapId = 'map',
+  initialZoom = INITIAL_ZOOM,
+  onLoad,
+  currentStore,
+}: Props) => {
   if (!currentStore) return null;
   const menuLengths = currentStore.menus.length;
+
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const mapRef = useRef<NaverMap | null>(null);
+
+  const initializeMap = () => {
+    const storeLat = currentStore.coordinates[0];
+    const storeLng = currentStore.coordinates[1];
+
+    const mapOptions = {
+      center: new naver.maps.LatLng(storeLat, storeLng),
+      zoom: initialZoom,
+      minZoom: 9,
+      scaleControl: false,
+      mapDataControl: false,
+    };
+
+    const map = new naver.maps.Map(mapId, mapOptions);
+
+    const markerOptions = {
+      position: new naver.maps.LatLng(storeLat, storeLng),
+      map: map,
+    };
+
+    const marker = new naver.maps.Marker(markerOptions);
+
+    mapRef.current = map;
+
+    if (onLoad) {
+      onLoad(map, marker);
+    }
+  };
+
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  useEffect(() => {
+    return () => {
+      mapRef.current?.destroy();
+    };
+  }, []);
 
   return (
     <Styled>
@@ -34,7 +84,7 @@ const DetailContent = ({ currentStore }: Props) => {
           ))}
         </div>
         <div className="description">
-          <p>👉🏻{currentStore.description}</p>
+          <p>{currentStore.description || '소개 글이 등록되지 않았습니다.'}</p>
         </div>
         <div className="line" />
         <div className="basic_info">
@@ -47,14 +97,21 @@ const DetailContent = ({ currentStore }: Props) => {
             <span>{currentStore.phone || '정보가 없습니다.'}</span>
           </div>
           <div className="naver_url">
-            <Image src={Naver} width={20} height={20} alt="" />
-            <a
-              href={`https://pcmap.place.naver.com/restaurant/${currentStore.nid}/home`}
+            <Script
+              strategy="afterInteractive"
+              type="text/javascript"
+              src={`https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.NEXT_PUBLIC_NCP_CLIENT_ID}`}
+              onReady={initializeMap}
+            />
+            <div id={mapId} className="map" />
+            <Link
+              href={`http://map.naver.com/v5/entry/place/${currentStore.nid}?c=14.56,0,0,0,dh`}
+              aria-label="네이버 지도로 길찾기"
               target="_blank"
-              rel="noreferrer noopener"
+              className="naver_map_btn"
             >
-              <span>네이버 상세 정보</span>
-            </a>
+              네이버 지도에서 길찾기
+            </Link>
           </div>
         </div>
         <div className="line" />
@@ -107,7 +164,6 @@ const Styled = styled.div`
       > p {
         font-size: 0.875rem;
         color: #666;
-        text-align: center;
       }
     }
 
@@ -143,10 +199,23 @@ const Styled = styled.div`
         }
 
         &.naver_url {
-          > a {
-            margin-left: 10px;
-            font-size: 0.875rem;
-            color: #64c0a9;
+          flex-direction: column;
+
+          .map {
+            width: 100%;
+            height: 150px;
+          }
+
+          .naver_map_btn {
+            width: 100%;
+            display: block;
+            padding: 10px;
+            margin-top: 10px;
+            background: #00cf5b;
+            text-align: center;
+            color: #fff;
+            line-height: 1.3;
+            font-weight: 500;
           }
         }
       }
