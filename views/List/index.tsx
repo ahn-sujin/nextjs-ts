@@ -33,6 +33,6 @@ const Styled = styled.div`
   }
 
   > .container {
-    padding: 5rem 0 1.25rem;
+    padding: 4.063rem 0 1.25rem;
   }
 `;

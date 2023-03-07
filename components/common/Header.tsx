@@ -84,10 +84,10 @@ const Header = styled.header`
 
   > .title {
     position: absolute;
-    top: 50%;
+    top: 58%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     font-weight: 700;
   }
 

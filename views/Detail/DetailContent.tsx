@@ -34,7 +34,7 @@ const DetailContent = ({
     const mapOptions = {
       center: new naver.maps.LatLng(storeLat, storeLng),
       zoom: initialZoom,
-      minZoom: 9,
+      minZoom: 14,
       scaleControl: false,
       mapDataControl: false,
     };
