@@ -61,15 +61,14 @@ const DetailHeader = ({ currentStore }: Props) => {
           </button>
         </div>
       )}
-      <div className="alert_area">
-        <CircleAlert isAlertOpen={isAlertOpen}>
-          <AiOutlineCopy size="2.813rem" color="white" />
-          <p className="alert_text">
-            URL이
-            <br /> 복사되었습니다.
-          </p>
-        </CircleAlert>
-      </div>
+
+      <CircleAlert isAlertOpen={isAlertOpen}>
+        <AiOutlineCopy size="2.813rem" color="white" />
+        <p className="alert_text">
+          URL이
+          <br /> 복사되었습니다.
+        </p>
+      </CircleAlert>
     </Styled>
   );
 };
@@ -113,19 +112,10 @@ const Styled = styled.div`
     }
   }
 
-  .alert_area {
-    .container {
-      position: fixed;
-      top: 10rem;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .alert_text {
-      margin-top: 0.5rem;
-      text-align: center;
-      color: #fff;
-      font-size: 0.875rem;
-    }
+  .alert_text {
+    margin-top: 0.5rem;
+    text-align: center;
+    color: #fff;
+    font-size: 0.875rem;
   }
 `;
