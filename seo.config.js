@@ -4,9 +4,7 @@ export default {
   openGraph: {
     type: 'website',
     site_name: '맛집 지도 서비스',
-    images: [
-      { url: 'https://nextjs.org/static/blog/next-13/twitter-card.png' },
-    ],
+    images: [{ url: '/public/images/main_thumbnail.jpeg' }],
   },
   additionalLinkTags: [
     {

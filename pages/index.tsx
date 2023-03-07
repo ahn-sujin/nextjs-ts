@@ -19,7 +19,7 @@ const Home: NextPage<Props> = ({ stores }) => {
     <>
       <NextSeo
         title="맛집일기"
-        description="지도 서비스 메인 페이지"
+        description="지도 서비스를 통해 맛집 정보를 얻어가세요"
         canonical="https://sujin-map.vercel.app"
         openGraph={{
           url: 'https://sujin-map.vercel.app',
