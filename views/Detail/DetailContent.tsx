@@ -12,7 +12,7 @@ type Props = {
   currentStore?: Store;
   mapId?: string;
   initialZoom?: number;
-  onLoad?: (map: NaverMap, marker: NaverMap) => void;
+  onLoad?: (map: any, marker: any) => void;
 };
 
 const DetailContent = ({
