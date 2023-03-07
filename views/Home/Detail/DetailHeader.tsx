@@ -1,8 +1,14 @@
+import { useState } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { IoIosArrowUp } from 'react-icons/io';
-import { AiOutlineShareAlt } from 'react-icons/ai';
+import { AiOutlineShareAlt, AiOutlineCopy } from 'react-icons/ai';
+import { CiCircleMore } from 'react-icons/ci';
 import type { Store } from 'types/store';
 import copy from 'copy-to-clipboard';
 import styled from 'styled-components';
+import BaseStyle from 'components/common/BaseStyle';
+import CircleAlert from 'components/Alert/CircleAlert';
 
 interface Props {
   currentStore?: Store;
@@ -11,39 +17,57 @@ interface Props {
 }
 
 const DetailHeader = ({ currentStore, expanded, onClickArrow }: Props) => {
+  const [isAlertOpen, setIsAlertOpen] = useState(false);
+
+  const openAlert = () => {
+    setIsAlertOpen(true);
+  };
+
+  const closeAlert = () => {
+    setIsAlertOpen(false);
+  };
+
+  const router = useRouter();
+
   return (
     <Styled>
       <div className="header">
         <button
-          className={`arrow_button ${expanded ? 'expanded' : ''}`}
-          onClick={onClickArrow}
+          className="arrow_button"
+          onClick={() => {
+            router.push(`/detail/${currentStore?.name}`);
+          }}
           disabled={!currentStore}
-          aria-label={expanded ? '매장 정보 접기' : '매장 정보 펼치기'}
+          aria-label="매장 상세 페이지로 이동"
         >
           <IoIosArrowUp size={20} color="#666666" />
         </button>
         {!currentStore && (
           <p className="title">
-            📍맛집을 <span>선택</span>해주세요!
+            📍매장을 <span>선택</span>해주세요!
           </p>
         )}
         {currentStore && (
           <div className="flex_row">
             <p className="name">
-              {currentStore.name}
+              <Link
+                href={`/detail/${currentStore.name}`}
+                aria-label="디테일 페이지로 이동"
+              >
+                {currentStore.name}
+              </Link>
               <span className="sub_title">{currentStore.foodKind}</span>
             </p>
-            <button
-              onClick={() => {
-                copy(location.origin + '/detail/' + currentStore.name);
-              }}
-              aria-label="매장 정보 주소 클립보드 복사"
-            >
-              <AiOutlineShareAlt size={24} color="#F88A25" />
-            </button>
           </div>
         )}
       </div>
+      <CircleAlert isAlertOpen={isAlertOpen}>
+        <AiOutlineCopy size="2.813rem" color="white" />
+        <p className="alert_text">
+          URL이
+          <br /> 복사되었습니다.
+        </p>
+      </CircleAlert>
     </Styled>
   );
 };
@@ -103,17 +127,24 @@ const Styled = styled.div`
       align-items: center;
 
       > .name {
-        margin: 4px 0;
+        margin: 0.25rem 0;
         font-size: 1.25rem;
         font-weight: 700;
 
         > .sub_title {
-          margin-left: 8px;
+          margin-left: 0.5em;
           font-size: 0.813rem;
           font-weight: 400;
           color: #8f8f8f;
         }
       }
     }
+  }
+
+  .alert_text {
+    margin-top: 0.5rem;
+    text-align: center;
+    color: #fff;
+    font-size: 0.875rem;
   }
 `;

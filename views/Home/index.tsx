@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Header from 'components/HomeHeader';
 import MapSection from 'views/Home/Map';
-import DetailSection from 'views/Home/Detail';
+import DetailSection from 'view/Home/Detail';
 
 const HomeView = () => {
   return (

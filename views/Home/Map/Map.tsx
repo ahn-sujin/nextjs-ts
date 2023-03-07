@@ -74,6 +74,7 @@ const Styled = styled.div`
     // naver logo control 위치 조정
     & > div:nth-of-type(2) {
       bottom: 68px !important;
+      z-index: 0 !important;
     }
   }
 `;
