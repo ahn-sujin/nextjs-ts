@@ -18,11 +18,12 @@ const CircleAlert = ({ children, isAlertOpen }: CircleAlertProps) => {
 export default CircleAlert;
 
 const Styled = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
   > .container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     justify-content: center;
