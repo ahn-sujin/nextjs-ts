@@ -12,21 +12,9 @@ import CircleAlert from 'components/Alert/CircleAlert';
 
 interface Props {
   currentStore?: Store;
-  expanded: boolean;
-  onClickArrow: () => void;
 }
 
-const DetailHeader = ({ currentStore, expanded, onClickArrow }: Props) => {
-  const [isAlertOpen, setIsAlertOpen] = useState(false);
-
-  const openAlert = () => {
-    setIsAlertOpen(true);
-  };
-
-  const closeAlert = () => {
-    setIsAlertOpen(false);
-  };
-
+const DetailHeader = ({ currentStore }: Props) => {
   const router = useRouter();
 
   return (

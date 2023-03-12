@@ -8,20 +8,11 @@ import styled from 'styled-components';
 
 const HomeDetail = () => {
   const { data: currentStore } = useSWR<Store>(CURRENT_STORE_KEY);
-  const [expanded, setExpanded] = useState(false);
 
   return (
     <Styled>
-      <div
-        className={`detail_section ${expanded ? 'expanded' : ''} ${
-          currentStore ? 'selected' : ''
-        } `}
-      >
-        <DetailHeader
-          currentStore={currentStore}
-          expanded={expanded}
-          onClickArrow={() => setExpanded(!expanded)}
-        />
+      <div className={`detail_section ${currentStore ? 'selected' : ''} `}>
+        <DetailHeader currentStore={currentStore} />
         <DetailContent currentStore={currentStore} />
       </div>
     </Styled>
@@ -48,13 +39,6 @@ const Styled = styled.div`
     &.selected {
       height: 170px;
       transform: translateY(calc(100% - 160px));
-      transition: all 0.8s;
-    }
-
-    &.expanded {
-      height: 100%;
-      transform: translateY(0);
-      z-index: 101;
       transition: all 0.8s;
     }
 
