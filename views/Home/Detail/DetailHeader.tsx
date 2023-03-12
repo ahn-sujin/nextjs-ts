@@ -61,13 +61,6 @@ const DetailHeader = ({ currentStore, expanded, onClickArrow }: Props) => {
           </div>
         )}
       </div>
-      <CircleAlert isAlertOpen={isAlertOpen}>
-        <AiOutlineCopy size="2.813rem" color="white" />
-        <p className="alert_text">
-          URL이
-          <br /> 복사되었습니다.
-        </p>
-      </CircleAlert>
     </Styled>
   );
 };
