@@ -43,18 +43,19 @@ const Styled = styled.div`
     border-top-left-radius: 24px;
     border-top-right-radius: 24px;
     box-shadow: 0 -2px 8px 0 rgba(136, 136, 136, 0.3);
-    transition: all 800ms;
     transform: translateY(calc(100% - 68px));
 
     &.selected {
       height: 170px;
       transform: translateY(calc(100% - 160px));
+      transition: all 0.8s;
     }
 
     &.expanded {
       height: 100%;
       transform: translateY(0);
       z-index: 101;
+      transition: all 0.8s;
     }
 
     @media (max-width: 480px) {

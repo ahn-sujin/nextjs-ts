@@ -32,12 +32,12 @@ const Styled = styled.div`
     border-radius: 50%;
     background: ${BaseStyle.colors.primary};
     opacity: 0;
-    transition: all 0.5s;
     visibility: hidden;
 
     &.view {
       opacity: 1;
       visibility: visible;
+      transition: all 0.5s;
     }
   }
 `;

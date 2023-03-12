@@ -1,4 +1,4 @@
-import { Html, Head, Main, NextScript } from 'next/document';
+import Documnet, { Html, Head, Main, NextScript } from 'next/document';
 import Link from 'next/link';
 
 export default function Document() {
